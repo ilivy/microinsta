@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.cors import CORSMiddleware
 
+from constants import UPLOADED_IMAGES_DIR
 from resources.routers import api_router
 
 app = FastAPI()
@@ -26,6 +27,6 @@ app.add_middleware(
 )
 
 app.mount(
-    str(Path("/uploaded_images")),
-    StaticFiles(directory="uploaded_images"), name="Uploaded_images",
+    str(Path(f"/{UPLOADED_IMAGES_DIR}")),
+    StaticFiles(directory=UPLOADED_IMAGES_DIR), name=UPLOADED_IMAGES_DIR,
 )

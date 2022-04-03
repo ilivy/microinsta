@@ -8,6 +8,7 @@ from fastapi import HTTPException
 from sqlalchemy.orm.session import Session
 from starlette import status
 
+from constants import UPLOADED_IMAGES_DIR
 from models import DbPost, ImageUrlType
 from schemas.request.post import PostIn
 
@@ -50,11 +51,15 @@ class PostManager:
         if post.user_id != user_id:
             raise HTTPException(
                 status_code=status.HTTP_403_FORBIDDEN,
-                detail="Only post creator can delete post",
+                detail="Only post creator can delete the post",
             )
 
         db_session.delete(post)
         db_session.commit()
+
+        if post.image_url_type == ImageUrlType.relative:
+            os.remove(post.image_url)
+
         return "ok"
 
     @staticmethod
@@ -63,8 +68,7 @@ class PostManager:
         rand_str = "".join(random.choice(letters) for i in range(6))
         new = f"_{rand_str}."
         filename = new.join(image.filename.rsplit(".", 1))
-        # path = f"uploaded_images/{filename}"
-        path = os.path.join("uploaded_images", filename)
+        path = os.path.join(UPLOADED_IMAGES_DIR, filename)
 
         with open(path, "w+b") as buffer:
             shutil.copyfileobj(image.file, buffer)
