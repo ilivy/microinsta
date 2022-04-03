@@ -16,9 +16,7 @@ from schemas.request.post import PostIn
 class PostManager:
     @staticmethod
     def create_post(post: PostIn, user_id: int, db_session: Session):
-
         if not isinstance(post.image_url_type, ImageUrlType):
-            # if post.image_url_type not in image_url_types:
             raise HTTPException(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 detail="Parameter image_url_type can only take values 'absolute' or 'relative'.",
