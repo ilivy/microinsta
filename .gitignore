@@ -152,3 +152,4 @@ cython_debug/
 .idea/
 temp_files/!.gitkeep
 logs/!.gitkeep
+uploaded_images/!.gitkeep

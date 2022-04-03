@@ -1,6 +1,6 @@
-from schemas.base import BaseModel
-
 from email_validator import validate_email as validate_e, EmailNotValidError
+
+from schemas.base import BaseModel
 
 
 class EmailField(str):

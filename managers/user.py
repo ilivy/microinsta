@@ -1,5 +1,6 @@
 from fastapi import HTTPException
 from passlib.context import CryptContext
+
 # from psycopg2.errors import UniqueViolation
 from sqlalchemy.exc import IntegrityError
 

@@ -19,10 +19,10 @@ def register(user_data: UserRegisterIn, db_session: Session = Depends(get_db_ses
 def login(user_data: UserLoginIn, db_session: Session = Depends(get_db_session)):
     access_token, user = UserManager.login(db_session, user_data.dict())
     return {
-        'access_token': access_token,
-        'token_type': 'bearer',
-        'user_id': user.id,
-        'username': user.username
+        "access_token": access_token,
+        "token_type": "bearer",
+        "user_id": user.id,
+        "username": user.username,
     }
 
 
