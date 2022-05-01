@@ -2,7 +2,10 @@ import React, {useState, useEffect} from 'react';
 import './Post.css';
 import {Avatar, Button} from "@mui/material";
 
-const BASE_URL = 'http://localhost:8000/'
+const BASE_URL =
+  process.env.NODE_ENV === 'development'
+   ? 'http://localhost:8000/v1/'
+   : '/api/v1/';
 
 function Post({post, authToken, authTokenType, username, userId}) {
     

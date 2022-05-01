@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import {Button} from "@mui/material";
 import './ImageUpload.css';
 
-const BASE_URL = 'http://localhost:8000/'
+const BASE_URL =
+  process.env.NODE_ENV === 'development'
+   ? 'http://localhost:8000/v1/'
+   : '/api/v1/';
 
 function ImageUpload({authToken, authTokenType, userId}) {
   
