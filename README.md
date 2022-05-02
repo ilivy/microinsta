@@ -2,19 +2,20 @@
 
 A demo system which allows users to **post pictures** with captions and add comments to existing posts.
 
-The system provides an **authentication** (using JSON Web Token) and **authorization** functionality.
-
-The pictures are stored using **AWS s3** service.
-
-API endpoints are covered by tests.
-
-
 ## Implementation
+
+The data is stored in a PostgreSQL database instance. The API service processes the data. The Frontend service provides the user interface.
+
+ 'Bearer tokens' Authentication (**JSON Web Token**) is used to authorize users.
+
+The images are stored using the **AWS s3** service.
+
+The API endpoints are covered by tests.
 
 The system consists of:
 - **api service**: API written on *Python* using *FastAPI* framework
 - **frontend service**: a *React* frontend application 
-- **postgres service**: a postgres database instance
+- **postgres service**: a postgresql database instance
 
 The project is **dockerized**.
 
@@ -34,8 +35,8 @@ In the root project directory:
 - create a database for the project (**Postgres** instance will be available at port `5438`)
 
 ##### API service
-In the `backend` directory:
-- create Python virtual environment by running `python3 -m venv venv`
+In the `api` directory:
+- create a Python virtual environment by running `python3 -m venv venv`
 - activate the virtual environment by running `source venv/bin/activate`
 - run `pip install -r requirements.txt` to install dependencies
 - check the default configuration in `core/config.py`
@@ -55,7 +56,8 @@ In the root project directory:
 - rename `env/api.env.dist` into `env/api.env` and `env/postgres.env.dist` into `env/postgres.env` to use env variables
 - run `docker-compose up -d` to run all the containers
 - create a database for the project (**Postgres** instance will be available at port `5438`)
-- run `docker-compose run api alembic upgrade head` to migrate the database
+- run `docker-compose run --rm api alembic upgrade head` to migrate the database
+- or run `docker-compose run --rm alembic upgrade head` to migrate the database via a separate service **alembic**
 - run tests with `docker-compose run api pytest`
 - open [http://localhost:8000/docs](http://localhost:8000/docs) to view **the backend** in your browser
 - open [http://localhost:3000](http://localhost:3000) to view **the API** in your browser

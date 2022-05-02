@@ -22,7 +22,7 @@ services:
     volumes:
       - ./api/app:/app
       - ./api/tests:/tests
-    # command: bash -c "uvicorn app.main:app --reload --host 0.0.0.0 --port 80"
+#    command: bash -c "uvicorn app.main:app --reload --host 0.0.0.0 --port 80"
     env_file:
       - ./env/api.env
     depends_on:
@@ -44,15 +44,15 @@ services:
     depends_on:
       - api
 
-#  alembic:
-#    build: ./backend
-#    volumes:
-#      - ./backend:/app
-#     env_file:
-#       - ./env/api.env
-#    entrypoint: [ "alembic" ]
-#    depends_on:
-#      - postgres
+  alembic:
+    image: ilvi/udemyinsta-alembic:latest
+    container_name: udemyinsta-alembic
+    build: ./api
+    env_file:
+      - ./env/api.env
+    entrypoint: [ "alembic" ]
+    depends_on:
+      - postgres
 
 volumes:
   postgres-data:
