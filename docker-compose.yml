@@ -2,7 +2,7 @@ version: "3.8"
 services:
 
   postgres:
-    image: "postgres"
+    image: "postgres:14-alpine"
     container_name: udemyinsta-postgres
     ports:
       - "5438:5432"
