@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: insta-env
+data:
+  POSTGRES_USER_VAL: 'user_value'
+  POSTGRES_PASSWORD_VAL: 'pw_value'

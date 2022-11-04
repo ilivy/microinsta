@@ -63,13 +63,13 @@ In the root project directory:
 - open [http://localhost:3000](http://localhost:3000) to view **the API** in your browser
 
 
-## Production
+## Kubernetes
 
-In the `kubernetes/` directory run:
-
+In the `kubernetes/` directory:
+- rename `environment.yml.dist` into `environment.yml` to use env variables
+- run:
 ```bash
-kubectl apply -f
+kubectl apply -f=environment.yml
+kubectl apply -f=postgres.yml
 ```
-
-This will run the project in the production mode.
 
