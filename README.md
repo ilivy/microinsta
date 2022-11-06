@@ -67,9 +67,8 @@ In the root project directory:
 
 In the `kubernetes/` directory:
 - rename `environment.yml.dist` into `environment.yml` to use env variables
-- run:
+- from outside the folder (in the root project directory) run:
 ```bash
-kubectl apply -f=environment.yml
-kubectl apply -f=postgres.yml
+kubectl apply -f kubernetes/
 ```
 

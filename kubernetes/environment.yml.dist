@@ -3,5 +3,12 @@ kind: ConfigMap
 metadata:
   name: insta-env
 data:
-  POSTGRES_USER_VAL: 'user_value'
-  POSTGRES_PASSWORD_VAL: 'pw_value'
+  POSTGRES_USER_VAL: "user_value"
+  POSTGRES_PASSWORD_VAL: "pw_value"
+  DATABASE_URL_VAL: "postgresql://pg_usr:pg_pw@pg_host:5432/db_name"
+  ENVIRONMENT_VAL: "dev"
+  JWT_SECRET_VAL: "secret_key"
+  AWS_ACCESS_KEY_VAL: "aws_ak"
+  AWS_SECRET_KEY_VAL: "aws_sk"
+  AWS_BUCKET_PHOTO_VAL: "bucket_name"
+  AWS_REGION_VAL: "region"
