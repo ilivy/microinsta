@@ -14,7 +14,6 @@ class EnvironmentEnum(str, Enum):
     PROD = "prod"
     
 
-
 class GlobalConfig(BaseSettings):
     TITLE: str = "Udemyinsta"
     DESCRIPTION: str = "Demo project: FastAPI"
@@ -23,6 +22,7 @@ class GlobalConfig(BaseSettings):
     DEBUG: bool = False
     TIMEZONE: str = "UTC"
 
+    FACE_APP_URL: str = "http://localhost:8081/"
     JWT_SECRET: str = "jwtsecret"
 
     AWS_ACCESS_KEY: str = ""

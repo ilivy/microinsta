@@ -6,6 +6,7 @@ data:
   POSTGRES_USER_VAL: "user_value"
   POSTGRES_PASSWORD_VAL: "pw_value"
   DATABASE_URL_VAL: "postgresql://pg_usr:pg_pw@pg_host:5432/db_name"
+  FACE_APP_URL_VAL: "http://face-service.default:8081/"
   ENVIRONMENT_VAL: "dev"
   JWT_SECRET_VAL: "secret_key"
   AWS_ACCESS_KEY_VAL: "aws_ak"

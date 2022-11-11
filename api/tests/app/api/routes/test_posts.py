@@ -18,6 +18,7 @@ async def test_create_403(
         "image_url": "img_url",
         "image_url_type": "absolute",
         "caption": "caption",
+        "prediction": "prediction",
         "user_id": 1,
     }
     response = await async_client.post("/v1/posts", json=payload)
@@ -39,6 +40,7 @@ async def test_create_201(
         "image_url": "img_url",
         "image_url_type": "absolute",
         "caption": "caption",
+        "prediction": "prediction",
         "user_id": auth_data["user_id"],
     }
     headers = {
@@ -51,6 +53,7 @@ async def test_create_201(
         "image_url": payload["image_url"],
         "image_url_type": payload["image_url_type"],
         "caption": payload["caption"],
+        "prediction": payload["prediction"],
         "user_id": auth_data["user_id"],
         "id": mock.ANY,
         "created_at": mock.ANY,

@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: face-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: face
+  template:
+    metadata:
+      labels:
+        app: face
+    spec:
+      containers:
+        - name: api
+          image: ilvi/udemyinsta-face:latest

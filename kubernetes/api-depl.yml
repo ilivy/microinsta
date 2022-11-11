@@ -21,3 +21,9 @@ spec:
                 configMapKeyRef:
                   name: insta-env
                   key: DATABASE_URL_VAL
+            - name: FACE_APP_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: insta-env
+                  key: FACE_APP_URL_VAL
+

@@ -11,6 +11,17 @@ services:
     env_file:
       - ./env/postgres.env
 
+  face:
+    image: ilvi/udemyinsta-face:latest
+    container_name: udemyinsta-face
+    build: ./face
+    expose:
+      - 8081
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./face/app:/appdir
+
   api:
     image: ilvi/udemyinsta-api:latest
     container_name: udemyinsta-api
@@ -20,13 +31,14 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./api/app:/app
-      - ./api/tests:/tests
+      - ./api/app:/appdir/app
+      - ./api/tests:/appdir/tests
 #    command: bash -c "uvicorn app.main:app --reload --host 0.0.0.0 --port 80"
     env_file:
       - ./env/api.env
     depends_on:
       - postgres
+      - face
 
   frontend:
     image: ilvi/udemyinsta-frontend:latest

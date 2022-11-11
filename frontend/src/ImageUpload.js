@@ -40,7 +40,7 @@ function ImageUpload({authToken, authTokenType, userId}) {
           throw response
         })
         .then(data => {
-          createPost(data.filename)
+          createPost(data.filename, data.photo_prediction)
         })
         .catch(error => {
           console.log(error)            
@@ -52,11 +52,12 @@ function ImageUpload({authToken, authTokenType, userId}) {
         })
   }
   
-  const createPost = (imageUrl) => {
+  const createPost = (imageUrl, photoPrediction) => {
       
       const json_string = JSON.stringify({
         'image_url': imageUrl,
         'image_url_type': 'absolute',
+        'prediction': photoPrediction,
         'caption': caption,
         'user_id': userId
       })

@@ -122,8 +122,9 @@ function Post({post, authToken, authTokenType, username, userId}) {
         src={imageUrl}
       />
               
+      <span className="post_prediction">{post.prediction}</span>
       <h4 className="post_text">{post.caption}</h4>
-              
+
         <div className="post_comments">
           {
             comments.map((comment) => (

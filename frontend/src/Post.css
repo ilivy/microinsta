@@ -17,6 +17,12 @@
   border-bottom: 1px solid lightgray;
 }
 
+.post_prediction {
+  font-size: 10px;
+  padding: 10px 0 0 10px;
+  opacity: 0.8;
+}
+
 .post_text {
   font-weight: normal;
   padding: 20px;

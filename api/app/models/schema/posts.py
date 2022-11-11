@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 
 from fastapi import HTTPException
 from pydantic import validator
@@ -15,6 +15,7 @@ class PostSchemaBase(BaseSchema):
     image_url: str
     image_url_type: ImageUrlType
     caption: str
+    prediction: Optional[str] = None
     user_id: int
 
 

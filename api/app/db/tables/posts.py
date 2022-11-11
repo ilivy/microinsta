@@ -13,6 +13,7 @@ class Post(Base):
     image_url = Column(String(510), nullable=False)
     image_url_type = Column(Enum(ImageUrlType), nullable=False, server_default=ImageUrlType.relative.name)
     caption = Column(String(255), nullable=False)
+    prediction = Column(String(255), nullable=True)
     created_at = Column(DateTime, nullable=False, server_default=func.now())
     user_id = Column(Integer, ForeignKey("insta_user.id"), nullable=False)
     user = relationship("User", lazy="joined")
