@@ -1,0 +1,23 @@
+.signin-modal {
+  padding: 20px;
+}
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin-image {
+  object-fit: contain;
+  width: 2rem;
+  margin-bottom: 1rem;
+}
+
+.signin button {
+  margin-top: 1rem;
+}
+
+.error-text {
+  color: #b40e0e;
+}

@@ -26,6 +26,7 @@ app = get_application()
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "http://localhost:3030",
     "http://127.0.0.1:3000",
 ]
 

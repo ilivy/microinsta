@@ -1,0 +1,20 @@
+.input input {
+  font-size: 1rem;
+  padding: 0.2rem;
+  border: 0;
+  border-bottom: 0.08rem solid #c4c4c4;
+  width: 100%;
+  margin: 0.4rem 0;
+}
+
+.input input:hover,
+.input input:focus {
+  border: 0;
+  border-bottom: 0.08rem solid #1a1a1a;
+  outline: 0;
+  box-shadow: 0 0.2rem 0.1rem -0.1rem rgba(25, 118, 210, 0.4);
+}
+
+.invalid input {
+  color: red;
+}

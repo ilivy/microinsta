@@ -1,0 +1,20 @@
+button {
+  font: inherit;
+  background-color: transparent;
+  border: 0;
+  color: #1976d2;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+button:disabled,
+button:disabled:hover {
+  cursor: not-allowed;
+  background-color: transparent;
+}

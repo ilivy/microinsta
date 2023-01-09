@@ -1,0 +1,17 @@
+.newcomment {
+  display: flex;
+  padding: 0 1rem;
+}
+
+.newcomment > div {
+  flex: 1; /* all space */
+}
+
+.newcomment button {
+  flex: 0; /* only needed space */
+}
+
+.error-text {
+  color: #b40e0e;
+  padding: 0 1rem;
+}
