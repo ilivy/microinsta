@@ -1,26 +1,32 @@
 # Demo project "Micro Insta"
 
-A demo system which allows users to **post pictures** with captions and add comments to existing posts.
-A Neural Network can **predict a gender, a race and an age of persons** on the pictures
+A demo app to **post photos** and comment on them.
+
+## Technologies
+
+- Python (FactAPI, TensorFlow, PyTest)
+- PostgreSQL
+- Amazon Web Services
+- React
+- Git, Docker, Kubernetes
 
 ## Implementation
 
-The data is stored in a PostgreSQL database instance. The **api** service processes the data, when saving images it calls the **face** service.
-**Face** service utilises a trained Neural Network to predict person's data on the pictures. 
-The **Frontend** service provides the user interface.
+Data is stored in a PostgreSQL database. **Api** service processes the data, it utilises **Face** service with a trained Neural Network to predict person's data on the pictures. 
+**Frontend** service provides a user interface.
 
 'Bearer tokens' Authentication is used to authorize users.
 
-The images are stored using the **AWS s3** service.
+Images are stored using **AWS s3** service.
 
-The API endpoints are covered by tests.
+API endpoints are covered by tests.
 
 
-The system consists of:
-- **api service**: API written on *Python* using *FastAPI* framework
-- **face service**: a *Python* application with a Neural Network, working with images
-- **frontend service**: a *React* frontend application 
-- **postgres service**: a postgresql database instance
+**Services**:
+- **Api**: API written on *Python* using *FastAPI* framework
+- **Face**: a *Python* application with a Neural Network, working with images
+- **Frontend**: a *React* frontend application 
+- **Postgres**: a postgresql database instance
 
 The project is **dockerized**.
 
@@ -73,7 +79,8 @@ In the root project directory:
 - create a database for the project (**Postgres** instance will be available at port `5438`)
 - run `docker-compose run --rm api alembic upgrade head` to migrate the database
 - or run `docker-compose run --rm alembic upgrade head` to migrate the database via a separate service **alembic**
-- run tests with `docker-compose run api pytest` (set database_url to a test one)
+- run api tests with `docker-compose run api pytest` (set database_url to a test one)
+- run frontend tests with `docker-compose run frontend npm test`
 - open [http://localhost:8000/docs](http://localhost:8000/docs) to view **the backend** in your browser
 - open [http://localhost:3000](http://localhost:3000) to view **the API** in your browser
 
