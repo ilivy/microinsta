@@ -12,7 +12,7 @@ A demo app to **post photos** and comment on them.
 
 ## Implementation
 
-Data is stored in a PostgreSQL database. **Api** service processes the data, it utilises **Face** service with a trained Neural Network to predict person's data on the pictures. 
+Data is stored in a PostgreSQL database. **Api** service processes the data, it also utilizes **Face** service with a trained Neural Network to predict the age, gender and race of a person in an uploaded image. 
 **Frontend** service provides a user interface.
 
 'Bearer tokens' Authentication is used to authorize users.
