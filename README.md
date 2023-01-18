@@ -6,7 +6,7 @@ A demo app to **post photos** and comment on them.
 
 - Python (FactAPI, TensorFlow, PyTest)
 - PostgreSQL
-- Amazon Web Services
+- Amazon Web Services (s3)
 - React
 - Git, Docker, Kubernetes
 
