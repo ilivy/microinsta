@@ -1,6 +1,6 @@
 # Demo project "Micro Insta"
 
-A demo app to **post photos** and comment on them.
+A demo **web application** to post photos and comment on them.
 
 ## Technologies
 
