@@ -12,10 +12,10 @@ A demo **web application** to post photos and comment on them.
 
 ## Implementation
 
-Data is stored in a PostgreSQL database. **Api** service processes the data, it also utilizes **Face** service with a trained Neural Network to predict the age, gender and race of a person in an uploaded image. 
-**Frontend** service provides a user interface.
+**Api** is a RESTful application working with data, it also utilizes **Face** service with a trained Neural Network to predict the age, gender and race of a person in an uploaded image. The data is stored in a PostgreSQL database. **Frontend** service provides UI. 
 
-'Bearer tokens' Authentication is used to authorize users.
+
+'Bearer tokens' Authorization is used (JWT with secret).
 
 Images are stored using **AWS s3** service.
 
@@ -23,7 +23,7 @@ API endpoints are covered by tests.
 
 
 **Services**:
-- **Api**: API written on *Python* using *FastAPI* framework
+- **Api**: RESTful API written on *Python* using *FastAPI* framework
 - **Face**: a *Python* application with a Neural Network, working with images
 - **Frontend**: a *React* frontend application 
 - **Postgres**: a postgresql database instance
