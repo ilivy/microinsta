@@ -2,6 +2,8 @@
 
 A demo **web application** to post photos and comment on them.
 
+REST API + microservice with Neural Network + Single Page Application.
+
 ## Technologies
 
 - Python (FastAPI, TensorFlow, PyTest)

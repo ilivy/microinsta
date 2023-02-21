@@ -58,10 +58,15 @@ class PostsManager:
         photo_url = s3.upload_photo(path, name, extension)
 
         # Try to predict who is on the picture
+        # Open file as bynary
         with open(path, "rb") as binary_file:
+            # Read the bytes
             binary_file_data = binary_file.read()
+            # Base64 encoding returns bytes
             base64img = base64.b64encode(binary_file_data)
+            # Convert bytes into a string
             base64img = base64img.decode('utf-8')
+        # Send base64 string
         photo_prediction = await request_prediction(base64img)
 
         # We don't need the local file anymore
