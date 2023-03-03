@@ -89,7 +89,7 @@ In the root project directory:
 
 In `kubernetes/` directory:
 - rename `environment.yml.dist` into `environment.yml` to use env variables
-- from outside the directory (in the root project directory) run:
+- in the project root directory run:
 ```bash
 kubectl apply -f kubernetes/
 ```
