@@ -15,7 +15,7 @@ class EnvironmentEnum(str, Enum):
     
 
 class GlobalConfig(BaseSettings):
-    TITLE: str = "Udemyinsta"
+    TITLE: str = "Micro Insta"
     DESCRIPTION: str = "Demo project: FastAPI"
 
     ENVIRONMENT: EnvironmentEnum

@@ -3,7 +3,7 @@ services:
 
   postgres:
     image: "postgres:14-alpine"
-    container_name: udemyinsta-postgres
+    container_name: microinsta-postgres
     ports:
       - "5438:5432"
     volumes:
@@ -12,8 +12,8 @@ services:
       - ./env/postgres.env
 
   face:
-    image: ilvi/udemyinsta-face:latest
-    container_name: udemyinsta-face
+    image: ilvi/microinsta-face:latest
+    container_name: microinsta-face
     build: ./face
     expose:
       - 8081
@@ -23,8 +23,8 @@ services:
       - ./face/app:/appdir
 
   api:
-    image: ilvi/udemyinsta-api:latest
-    container_name: udemyinsta-api
+    image: ilvi/microinsta-api:latest
+    container_name: microinsta-api
     build: ./api
     expose:
       - 8000
@@ -41,8 +41,8 @@ services:
       - face
 
   frontend:
-    image: ilvi/udemyinsta-frontend:latest
-    container_name: udemyinsta-frontend
+    image: ilvi/microinsta-frontend:latest
+    container_name: microinsta-frontend
     build: ./frontend
     expose:
       - 3000
@@ -59,8 +59,8 @@ services:
       - api
 
   alembic:
-    image: ilvi/udemyinsta-alembic:latest
-    container_name: udemyinsta-alembic
+    image: ilvi/microinsta-alembic:latest
+    container_name: microinsta-alembic
     build: ./api
     env_file:
       - ./env/api.env

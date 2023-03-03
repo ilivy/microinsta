@@ -6,8 +6,6 @@ from sqlalchemy import pool
 
 from alembic import context
 
-sys.path = ["", ".."] + sys.path[1:]  # TODO: Fix it
-
 from app.core.config import settings
 from app.db.base import Base
 
